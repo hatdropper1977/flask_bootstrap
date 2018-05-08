@@ -1,6 +1,5 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
-{% from "_formhelpers.html" import render_field %}
 {% block content %}
   <div class="container">
   <h3>Please answer this very important essay</h3>
@@ -9,8 +8,8 @@
 <form action="" method="post" class="form" role="form">
   {{ form.csrf_token() }}
  <d1>
-   {{ render_field(form.essay_question, class='form-control', placeholder='Write down your thoughts here...') }}
-   {{ render_field(form.email_addr, class='form-control', placeholder='Enter email') }}
+  {{ wtf.form_field(form.essay_question, class='form-control', placeholder='Write down your thoughts here...') }}
+  {{ wtf.form_field(form.email_addr, class='form-control', placeholder='your@email.com') }}
  </d1>
  <p><input type=submit class='btn btn-warning btn-block'>
 </form>
