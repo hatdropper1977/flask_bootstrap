@@ -1,0 +1,12 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+  <div class="container">
+  <h3>Please answer this very important essay</h3>
+  <p>If you don't it'll go on your permanent record!.</p>
+<hr>
+{{ wtf.quick_form(form) }}
+<hr>
+<p>Copyright 2018 <a href="https://www.freshlex.com">Freshlex, LLC</a></p>
+</div>
+{% endblock %}
