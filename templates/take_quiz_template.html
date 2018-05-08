@@ -1,11 +1,19 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
+{% from "_formhelpers.html" import render_field %}
 {% block content %}
   <div class="container">
   <h3>Please answer this very important essay</h3>
   <p>If you don't it'll go on your permanent record!.</p>
 <hr>
-{{ wtf.quick_form(form) }}
+<form action="" method="post" class="form" role="form">
+  {{ form.csrf_token() }}
+ <d1>
+   {{ render_field(form.essay_question, class='form-control', placeholder='Write down your thoughts here...') }}
+   {{ render_field(form.email_addr, class='form-control', placeholder='Enter email') }}
+ </d1>
+ <p><input type=submit class='btn btn-warning btn-block'>
+</form>
 <hr>
 <p>Copyright 2018 <a href="https://www.freshlex.com">Freshlex, LLC</a></p>
 </div>
